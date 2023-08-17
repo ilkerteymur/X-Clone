@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+button {
+  border: none !important;
+  outline: none !important;
+  border-radius: 10px !important;
+  cursor: pointer;
+  padding: 5px 20px;
+  transition: all 0.3s;
+}
+
+.auth-page {
+  min-height: 100vh;
+  background: rgb(78, 78, 78);
+  display: grid;
+  place-items: center;
+}
+
+.auth-page form {
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 450px;
+  align-items: center;
+  padding: 40px 80px;
+  border: 1px solid rgba(128, 128, 128, 0.712);
+  border-radius: 10px;
+  gap: 50px;
+}
+.auth-page form img {
+  width: 80px;
+}
+.auth-page form div {
+  width: 100%;
+}
+.auth-page form input {
+  margin-top: 5px;
+}
+.auth-page form button {
+  background: white;
+  color: black;
+  width: 100%;
+}
+.auth-page form button:hover {
+  background: rgb(199, 198, 198);
+}
+.auth-page form .warning {
+  width: 100% !important;
+  background: #F8d7da;
+  padding: 5px 20px;
+  color: black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.feed {
+  background: black;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  font-family: "poppins";
+}
+@media (max-width: 1000px) {
+  .feed {
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+.left-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.left-bar img {
+  width: 80px;
+}
+@media (max-width: 1300px) {
+  .left-bar img {
+    width: 45px;
+  }
+}
+.left-bar nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+@media (max-width: 1300px) {
+  .left-bar nav {
+    align-items: end;
+  }
+}
+.left-bar nav a {
+  display: flex;
+  gap: 10px;
+  padding: 20px 10px;
+  border-radius: 6px;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+@media (max-width: 1300px) {
+  .left-bar nav a i {
+    font-size: 24px;
+  }
+}
+.left-bar nav a span {
+  white-space: nowrap;
+}
+@media (max-width: 1300px) {
+  .left-bar nav a span {
+    display: none;
+  }
+}
+.left-bar nav a:hover {
+  background: rgb(56, 55, 55);
+}
+.left-bar nav button {
+  background: #1DA1F2;
+  color: white;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.left-bar nav button:hover {
+  background: rgba(201, 153, 245, 0.658);
+}
+.left-bar nav button span {
+  white-space: nowrap;
+}
+@media (max-width: 1300px) {
+  .left-bar nav button span {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar nav button {
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 50% !important;
+  }
+}
+.left-bar .user-info {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info {
+    flex-direction: column;
+    align-items: end;
+  }
+}
+.left-bar .user-info img {
+  height: 60px;
+  width: 60px;
+}
+.left-bar .user-info button {
+  background: gray;
+  color: white;
+  border-radius: 6px !important;
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info button span {
+    display: none;
+  }
+}
+@media (max-width: 1300px) {
+  .left-bar .user-info p {
+    display: none;
+  }
+}
+
+main {
+  border: 1px solid rgb(59, 58, 58);
+}
+main header {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 21px;
+  border-bottom: 1px solid rgb(59, 58, 58);
+}
+main #post-tweet {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgb(59, 58, 58);
+  padding: 10px;
+}
+main #post-tweet img {
+  width: 50px;
+  height: 50px;
+}
+main #post-tweet .input-area {
+  width: 100%;
+}
+main #post-tweet .input-area input {
+  width: 100%;
+  background: black;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+}
+main #post-tweet .input-area .buttons {
+  display: flex;
+  justify-content: end;
+}
+main #post-tweet .input-area .buttons button {
+  border-radius: 60px !important;
+  background: #1DA1F2;
+  color: white;
+}
+main #post-tweet .input-area .buttons button:hover {
+  background: rgb(115, 115, 243);
+}
+
+@media (max-width: 1000px) {
+  .news {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
