@@ -155,8 +155,9 @@ button {
   }
 }
 .left-bar .user-info img {
-  height: 60px;
-  width: 60px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
 }
 .left-bar .user-info button {
   background: gray;
@@ -192,6 +193,7 @@ main #post-tweet {
 main #post-tweet img {
   width: 50px;
   height: 50px;
+  border-radius: 50%;
 }
 main #post-tweet .input-area {
   width: 100%;

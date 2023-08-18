@@ -8,15 +8,18 @@ export const authEle = {
 
 export const mainEle = {
     pics: document.querySelectorAll('#profile-pic'),
+    userName: document.querySelectorAll('.user-info #user-name'),
+    userTag: document.querySelectorAll('.user-info #user-tag'),
+    logoutBtn: document.querySelector('#logout-btn'),
 };
 
 // kullanıcı bilgilerini ekrana basar
 export const renderUserInfo = (user) => {
     // kullanıcı resimlerini ekrana basar
-    
     mainEle.pics.forEach((img) => (img.src = user.avatar));
-    
-    
-    
   
-};
+    // kullanıcı ismini ekran basar
+    mainEle.userName.innerText = user.name;
+  
+    mainEle.userTag.innerText = '@' + user.profile;
+  };
