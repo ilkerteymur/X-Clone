@@ -176,7 +176,17 @@ button {
 }
 
 main {
+  height: 100vh;
+  overflow: auto;
   border: 1px solid rgb(59, 58, 58);
+}
+main::-webkit-scrollbar {
+  width: 8px;
+  background-color: black;
+}
+main::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.925);
+  border-radius: 5px;
 }
 main header {
   padding: 20px;
@@ -218,6 +228,59 @@ main #post-tweet .input-area .buttons button {
 }
 main #post-tweet .input-area .buttons button:hover {
   background: rgb(115, 115, 243);
+}
+
+.tweets-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+}
+.tweet #user-img {
+  height: 50px;
+}
+.tweet .body {
+  width: 100%;
+  margin-top: 10px;
+}
+.tweet .body .user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+.tweet .body .user .info {
+  display: flex;
+  gap: 10px;
+}
+.tweet .body .user p {
+  color: gray;
+}
+.tweet .body .content img {
+  border-radius: 10px;
+  max-height: 300px;
+}
+.tweet .body .content video {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 10px;
+}
+.tweet .body .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.tweet .body .buttons button {
+  background: none;
+  color: rgb(134, 133, 133);
+}
+.tweet .body .buttons button:hover {
+  background: rgba(214, 211, 211, 0.26);
+  border-radius: 50px !important;
 }
 
 @media (max-width: 1000px) {

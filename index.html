@@ -1,81 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>X | Home Page</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"/>
-      <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+    />
+    <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
-    </head>
-<body class="feed">
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="feed">
     <aside class="left-bar">
-        <nav>
-          <img src="IMG/x-logo.png" />
-          <a>
-            <i class="bi bi-house-fill"></i>
-            <span>Anasayfa</span>
-          </a>
-          <a>
-            <i class="bi bi-search"></i>
-            <span>Keşfet</span>
-          </a>
-          <a>
-            <i class="bi bi-bell-fill"></i>
-            <span>Bildirimler</span>
-          </a>
-          <a>
-            <i class="bi bi-bookmark-fill"></i>
-            <span>Yeri İşaretleri</span>
-          </a>
-          <a>
-            <i class="bi bi-envelope-fill"></i>
-            <span>Mesajlar</span>
-          </a>
-          <button>
-            <i class="bi bi-send-fill"></i>
-            <span>Gönder</span>
+      <nav>
+        <img src="IMG/x-logo.png" />
+        <a>
+          <i class="bi bi-house-fill"></i>
+          <span>Anasayfa</span>
+        </a>
+        <a>
+          <i class="bi bi-search"></i>
+          <span>Keşfet</span>
+        </a>
+        <a>
+          <i class="bi bi-bell-fill"></i>
+          <span>Bildirimler</span>
+        </a>
+        <a>
+          <i class="bi bi-bookmark-fill"></i>
+          <span>Yeri İşaretleri</span>
+        </a>
+        <a>
+          <i class="bi bi-envelope-fill"></i>
+          <span>Mesajlar</span>
+        </a>
+        <button>
+          <i class="bi bi-send-fill"></i>
+          <span>Gönder</span>
+        </button>
+      </nav>
+      <div class="user-info">
+        <img id="profile-pic" />
+        <div>
+          <p id="user-name"></p>
+          <p id="user-tag"></p>
+          <button id="logout-btn">
+            <i class="bi bi-door-open-fill"></i>
+            <span>Çıkış Yap</span>
           </button>
-        </nav>
-        <div class="user-info">
-          <img id="profile-pic"/>
-          <div>
-            <p id="user-name"></p>
-            <p id="user-tag"></p>
-            <button id="logout-btn">
-              <i class="bi bi-door-open-fill"></i>
-              <span>Çıkış Yap</span>
-            </button>
-          </div>
         </div>
-      </aside>
+      </div>
+    </aside>
 
     <main>
-        <header>Anasayfa</header>
-        <!-- Tweet atma -->
-        <form id="post-tweet">
-            <img id="profile-pic">
-            <div class="input-area">
-                <input type="text" placeholder="Neler Oluyor?">
-                <div class="buttons">
-                    <button>Tweetle</button>
-                </div>
-            </div>
-        </form>
-        <!-- Atılan Tweetler -->
-        <div>
-
+      <header>Anasayfa</header>
+      <!-- Tweet atma -->
+      <form id="post-tweet">
+        <img id="profile-pic" />
+        <div class="input-area">
+          <input type="text" placeholder="Neler Oluyor?" />
+          <div class="buttons">
+            <button>Tweetle</button>
+          </div>
         </div>
+      </form>
+      <!-- Atılan Tweetler -->
+
+      <div class="tweets-area">
+        <!-- <div class="tweet">
+          <img
+            id="user-img"
+            src="https://pbs.twimg.com/profile_images/568096637042823168/xYhEhbZv_normal.jpeg"
+          />
+          <div class="body">
+            <div class="user">
+              <div class="info">
+                <h6>Ilker Teymur</h6>
+                <p>@ilkerteymur51</p>
+                <p>3 saat</p>
+              </div>
+              <i class="bi bi-three-dots"></i>
+            </div>
+            <div class="content">
+              <p>Atılan tweeting yazı içeriği</p>
+              <img
+                src="https://pbs.twimg.com/profile_images/568096637042823168/xYhEhbZv_normal.jpeg"
+              />
+            </div>
+            <div class="buttons">
+              <button>
+                <i class="bi bi-chat"></i>
+                <span>91</span>
+              </button>
+              <button>
+                <i class="bi bi-recycle"></i>
+                <span>11</span>
+              </button>
+              <button>
+                <i class="bi bi-heart"></i>
+                <span>499</span>
+              </button>
+              <button>
+                <i class="bi bi-bookmark"></i>
+                <span>11</span>
+              </button>
+            </div>
+          </div>
+        </div> -->
+      </div>
     </main>
 
     <aside class="news">haberler</aside>
 
-
-
     <script src="main.js" type="module"></script>
-</body>
+  </body>
 </html>
