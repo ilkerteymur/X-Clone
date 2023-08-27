@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X | Login</title>
-    <link rel="stylesheet" href="styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>X | Giriş Yap</title>
+
+    <link rel="stylesheet" href="scss/style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"/>
-</head>
-<body class="auth-page">
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="auth-page">
     <form id="login">
-        <img src="IMG/x-logo.png">
-        <div>
-            <label for="">Username</label>
-            <input id="name" class="form-control" type="text">
-            <div class="name-warning mt-4"></div>
-        </div>
-        <div>
-            <label for="">Password</label>
-            <input id="pass" class="form-control" type="password">
-            <div class="pass-warning mt-4"></div>
-        </div>
+      <img src="/images/x-logo.png" />
 
-        <button>Giriş Yap</button>
+      <div>
+        <label>Kullanıcı Adı</label>
+        <input id="name" class="form-control" type="text" />
+        <div class="name-warning mt-4"></div>
+      </div>
+
+      <div>
+        <label>Şifre</label>
+        <input id="pass" class="form-control" type="password" />
+        <div class="pass-warning mt-4"></div>
+      </div>
+
+      <button>Giriş Yap</button>
     </form>
-    
-
-
 
     <script src="scripts/auth.js" type="module"></script>
-</body>
+  </body>
 </html>

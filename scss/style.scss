@@ -1,8 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import "auth";
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import 'auth';
+@import 'info';
+@import 'news';
+@import 'user';
 
 @mixin laptop {
   @media (max-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin min-laptop {
+  @media (min-width: 1300px) {
     @content;
   }
 }
@@ -19,24 +28,18 @@
   }
 }
 
-@mixin min-laptop {
-  @media (min-width: 1300px) {
-    @content;
-  }
-}
-
 .feed {
   background: black;
   color: white;
   min-height: 100vh;
+  font-family: 'poppins';
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  font-family: "poppins";
   @include tablet() {
     grid-template-columns: 1fr 3fr;
   }
-  @include min-tablet(){
+  @include min-tablet() {
     grid-template-columns: 1fr 600px 1fr;
   }
 }
@@ -45,48 +48,44 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @include min-laptop(){
+  a {
+    color: white;
+  }
+  @include min-laptop() {
     align-items: end;
     margin-right: 50px;
   }
+
   img {
     width: 80px;
     @include laptop() {
-      width: 45px;
+      width: 50px;
     }
   }
+
   nav {
     display: flex;
     flex-direction: column;
-    padding: 15px 10px;
+    padding: 20px 10px;
 
     @include laptop() {
       align-items: end;
     }
+
     a {
       display: flex;
+      font-size: 19px;
       gap: 10px;
       padding: 20px 10px;
       border-radius: 6px;
-      font-size: 19px;
       cursor: pointer;
       transition: all 0.4s;
-      i {
-        @include laptop() {
-          font-size: 24px;
-        }
-      }
-      span {
-        white-space: nowrap;
-        @include laptop() {
-          display: none;
-        }
-      }
+
       &:hover {
-        background: rgb(56, 55, 55);
+        background: rgb(50, 50, 50);
       }
     }
+
     button {
       background: $blue;
       color: white;
@@ -94,21 +93,26 @@
       border-radius: 4px;
       font-weight: bold;
       &:hover {
-        background: rgba(201, 153, 245, 0.658);
-      }
-      span {
-        white-space: nowrap;
-        @include laptop() {
-          display: none;
-        }
+        background: rgb(0, 97, 161);
       }
       @include laptop() {
         padding: 0;
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         display: grid;
         place-items: center;
-        border-radius: 50% !important;
+        border-radius: 50%;
+      }
+    }
+    i {
+      @include laptop() {
+        font-size: 26px;
+      }
+    }
+    span {
+      white-space: nowrap;
+      @include laptop() {
+        display: none;
       }
     }
   }
@@ -116,19 +120,20 @@
   .user-info {
     display: flex;
     gap: 10px;
-    @include laptop() {
+    @include laptop {
       flex-direction: column;
       align-items: end;
     }
     img {
-      height: 56px;
-      width: 56px;
+      height: 60px;
+      width: 60px;
       border-radius: 50%;
     }
     button {
       background: gray;
+      border-radius: 6px;
       color: white;
-      border-radius: 6px !important;
+
       span {
         @include laptop() {
           display: none;
@@ -136,7 +141,7 @@
       }
     }
     p {
-      @include laptop() {
+      @include laptop {
         display: none;
       }
     }
@@ -144,16 +149,17 @@
 }
 
 main {
-  height: 100vh;
   overflow: auto;
-  border: 1px solid rgb(59, 58, 58);
-  &::-webkit-scrollbar{
-    width: 8px;
-    background-color: black;
+  height: 100vh;
+  border: 1px solid rgb(60, 60, 60);
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background: black;
   }
-  
-  &::-webkit-scrollbar-thumb{
-    background: rgba(128, 128, 128, 0.925);
+
+  &::-webkit-scrollbar-thumb {
+    background: gray;
     border-radius: 5px;
   }
 
@@ -161,13 +167,13 @@ main {
     padding: 20px;
     font-weight: bold;
     font-size: 21px;
-    border-bottom: 1px solid rgb(59, 58, 58);
+    border-bottom: 1px solid rgb(60, 60, 60);
   }
 
   #post-tweet {
     display: flex;
     gap: 10px;
-    border-bottom: 1px solid rgb(59, 58, 58);
+    border-bottom: 1px solid rgb(60, 60, 60);
     padding: 10px;
 
     img {
@@ -177,25 +183,26 @@ main {
     }
     .input-area {
       width: 100%;
+
       input {
         width: 100%;
         background: black;
+        color: white;
         border: none;
         outline: none;
         padding: 10px 20px;
         font-size: 20px;
-        color: white;
       }
 
       .buttons {
         display: flex;
         justify-content: end;
         button {
-          border-radius: 60px !important;
+          border-radius: 60px;
           background: $blue;
           color: white;
           &:hover {
-            background: rgb(115, 115, 243);
+            background: rgb(0, 92, 149);
           }
         }
       }
@@ -203,69 +210,67 @@ main {
   }
 }
 
-.tweets-area{
-display: flex;
-flex-direction: column;
+.tweets-area {
+  display: flex;
+  flex-direction: column;
 }
 
-.tweet{
+.tweet {
   display: flex;
-  gap: 15px;
   padding: 10px;
-  border-bottom: 1px solid gray;
-  transition: .2s;
-  &:hover{
-    background: rgb(3, 3, 3);
-    cursor: pointer;
+  gap: 15px;
+  border-bottom: 1px solid rgb(50, 50, 50);
+  &:hover {
+    background: rgb(28, 28, 28);
   }
-  
-  #user-img{
+
+  #user-img {
     height: 50px;
     border-radius: 50%;
   }
-  .body{ 
+  .body {
     width: 100%;
     margin-top: 10px;
-    .user{
+    .user {
       display: flex;
       align-items: center;
-      gap: 10px;
       justify-content: space-between;
-      
-      .info{
+      .info {
         display: flex;
         gap: 10px;
+        text-decoration: none;
+        color: white;
       }
-      p{
+      p {
         color: gray;
       }
     }
-    .content{
+    .content {
       text-decoration: none;
-      color: #fff;
-      img{
-
+      color: white;
+      img {
+        width: 100%;
         border-radius: 10px;
         max-height: 300px;
+        object-fit: cover;
       }
-      video{
+      video {
         width: 100%;
-        max-height: 500px;
         border-radius: 10px;
-        max-width: 500px;
+        max-height: 500px;
       }
     }
-    .buttons{
+    .buttons {
       display: flex;
       justify-content: space-between;
       margin-top: 20px;
 
-      button{
+      button {
         background: none;
-        color: rgb(134, 133, 133);
-        &:hover{
-          background: rgba(214, 211, 211, 0.26);
-          border-radius: 50px !important;
+        color: rgb(136, 136, 136);
+        &:hover {
+          background: rgba(236, 236, 236, 0.247);
+          border-radius: 50px;
         }
       }
     }

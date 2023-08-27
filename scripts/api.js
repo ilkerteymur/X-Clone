@@ -11,13 +11,11 @@ const baseURL = "https://twitter-api45.p.rapidapi.com";
 export class API {
   constructor() {}
 
-  // kullanıcı detaylarını alma
+  //kullanıcı detaylarını alma
   async getUser(username) {
     try {
       const res = await fetch(
-        `
-             https://twitter-api45.p.rapidapi.com/screenname.php?screenname=${username}
-`,
+        `https://twitter-api45.p.rapidapi.com/screenname.php?screenname=${username}`,
         options
       );
       const data = await res.json();
@@ -27,12 +25,11 @@ export class API {
     }
   }
 
-  // diğer API istekleri
-  async fectData(endpoint, paramName, paramValue) {
+  //diğer api istekler...
+  async fetchData(endpoint, paramName, paramValue) {
     try {
-      // parametre olarak gelen linke
-      // yeni parametre olarak gelen url parametresini ekleyip
-      // istek atma
+      // paramtre olarak gelen linke
+      // yeni paramtre oalrak gelen url parametresini ekleyip istek atma
       const res = await fetch(
         `${baseURL}${endpoint}?${paramName}=${paramValue}`,
         options
