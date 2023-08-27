@@ -40,28 +40,27 @@ const getMedia = (media) => {
 };
 
 // kullanıcının tweetlerini ekrana basma
-export const renderTimeline = (tweets) => {
-  console.log(tweets);
+export const renderTimeline = (user,tweets) => {
   let timelineHTML = tweets
     .map(
       (tweet) => `
     <div class="tweet">
     <img
       id="user-img"
-      src="https://pbs.twimg.com/profile_images/568096637042823168/xYhEhbZv_normal.jpeg"/>
+      src="${user.avatar}"/>
     <div class="body">
       <div class="user">
         <div class="info">
-          <h6>Ilker Teymur</h6>
-          <p>@ilkerteymur51</p>
-          <p>3 saat</p>
+          <h6>${user.name}</h6>
+          <p>${user.profile}</p>
+          <p>${moment(tweet.created_at).fromNow()}</p>
         </div>
         <i class="bi bi-three-dots"></i>
       </div>
-      <div class="content">
+      <a href="?status#${tweet.tweet_id}" class="content">
         <p>${tweet.text}</p>
         ${getMedia(tweet.media)}
-      </div>
+      </a>
       <div class="buttons">
         <button>
           <i class="bi bi-chat"></i>
@@ -88,4 +87,15 @@ export const renderTimeline = (tweets) => {
 
   // oluşturduğumuz tweetleri HTML'e gönderme
   mainEle.tweetsArea.innerHTML = timelineHTML;
+};
+
+// parametre olarak gelen alana loading basar
+export const renderLoader = (outlet) => {
+  outlet.innerHTML = `
+  <div class="d-flex justify-content-center my-5">
+   <div class="spinner-grow" role="status">
+     <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  `;
 };

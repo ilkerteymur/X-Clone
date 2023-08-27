@@ -64,7 +64,12 @@ button {
 }
 @media (max-width: 1000px) {
   .feed {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
+  }
+}
+@media (min-width: 1000px) {
+  .feed {
+    grid-template-columns: 1fr 600px 1fr;
   }
 }
 
@@ -72,6 +77,12 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (min-width: 1300px) {
+  .left-bar {
+    align-items: end;
+    margin-right: 50px;
+  }
 }
 .left-bar img {
   width: 80px;
@@ -84,7 +95,7 @@ button {
 .left-bar nav {
   display: flex;
   flex-direction: column;
-  padding: 20px 10px;
+  padding: 15px 10px;
 }
 @media (max-width: 1300px) {
   .left-bar nav {
@@ -239,9 +250,16 @@ main #post-tweet .input-area .buttons button:hover {
   display: flex;
   gap: 15px;
   padding: 10px;
+  border-bottom: 1px solid gray;
+  transition: 0.2s;
+}
+.tweet:hover {
+  background: rgb(3, 3, 3);
+  cursor: pointer;
 }
 .tweet #user-img {
   height: 50px;
+  border-radius: 50%;
 }
 .tweet .body {
   width: 100%;
@@ -260,6 +278,10 @@ main #post-tweet .input-area .buttons button:hover {
 .tweet .body .user p {
   color: gray;
 }
+.tweet .body .content {
+  text-decoration: none;
+  color: #fff;
+}
 .tweet .body .content img {
   border-radius: 10px;
   max-height: 300px;
@@ -268,6 +290,7 @@ main #post-tweet .input-area .buttons button:hover {
   width: 100%;
   max-height: 500px;
   border-radius: 10px;
+  max-width: 500px;
 }
 .tweet .body .buttons {
   display: flex;
